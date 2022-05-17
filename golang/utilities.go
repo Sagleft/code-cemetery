@@ -8,6 +8,14 @@ import (
 	"os"
 )
 
+func getValuePrecision(val float64) int {
+    strs := strings.Split(strings.TrimRight(strconv.FormatFloat(val, 'f', 4, 32), "0"), ".")
+    if len(strs) < 2 {
+        return 0
+    }
+    return len(strs[1])
+}
+
 //GetFloatPrecision returns the number of decimal places in a float
 func GetFloatPrecision(f float64) int {
 	return int(math.Floor(math.Log10(math.Floor(1 / f))))
