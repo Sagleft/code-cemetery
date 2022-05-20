@@ -8,6 +8,15 @@ import (
 	"os"
 )
 
+// тернерный оператор. он же условный оператор
+// пример использования: var res = Ternary(val > 0, "positive", "negative")
+func ternary(statement bool, a, b interface{}) interface{} {
+    if statement {
+        return a
+    }
+    return b
+ }
+
 func getValuePrecision(val float64) int {
     strs := strings.Split(strings.TrimRight(strconv.FormatFloat(val, 'f', 4, 32), "0"), ".")
     if len(strs) < 2 {
