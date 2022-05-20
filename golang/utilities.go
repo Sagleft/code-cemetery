@@ -9,7 +9,7 @@ import (
 )
 
 // тернерный оператор. он же условный оператор
-// пример использования: var res = Ternary(val > 0, "positive", "negative")
+// пример использования: var res = ternary(val > 0, "positive", "negative")
 func ternary(statement bool, a, b interface{}) interface{} {
     if statement {
         return a
